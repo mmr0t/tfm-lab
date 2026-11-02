@@ -1,0 +1,44 @@
+
+Detector: arbitrary-send-eth
+WalletTxOriginVulnerable.transfer(address,uint256) (src/C1-control-acceso/Vulnerable.sol#50-54) sends eth to arbitrary user
+	Dangerous calls:
+	- to.transfer(amount) (src/C1-control-acceso/Vulnerable.sol#53)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
+
+Detector: erc20-interface
+WalletTxOriginVulnerable (src/C1-control-acceso/Vulnerable.sol#41-59) has incorrect ERC20 function interface:WalletTxOriginVulnerable.transfer(address,uint256) (src/C1-control-acceso/Vulnerable.sol#50-54)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-erc20-interface
+
+Detector: incorrect-equality
+BovedaVulnerable.isSolved() (src/C1-control-acceso/Vulnerable.sol#32-34) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C1-control-acceso/Vulnerable.sol#33)
+WalletTxOriginVulnerable.isSolved() (src/C1-control-acceso/Vulnerable.sol#56-58) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C1-control-acceso/Vulnerable.sol#57)
+BovedaInicializableVulnerable.isSolved() (src/C1-control-acceso/Vulnerable.sol#82-84) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C1-control-acceso/Vulnerable.sol#83)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: tx-origin
+WalletTxOriginVulnerable.transfer(address,uint256) (src/C1-control-acceso/Vulnerable.sol#50-54) uses tx.origin for authorization: require(bool,string)(tx.origin == owner,no autorizado) (src/C1-control-acceso/Vulnerable.sol#52)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-usage-of-txorigin
+
+Detector: missing-zero-check
+BovedaVulnerable.setOwner(address).newOwner (src/C1-control-acceso/Vulnerable.sol#22) lacks a zero-check on :
+		- owner = newOwner (src/C1-control-acceso/Vulnerable.sol#23)
+WalletTxOriginVulnerable.transfer(address,uint256).to (src/C1-control-acceso/Vulnerable.sol#50) lacks a zero-check on :
+		- to.transfer(amount) (src/C1-control-acceso/Vulnerable.sol#53)
+BovedaInicializableVulnerable.initialize(address)._owner (src/C1-control-acceso/Vulnerable.sol#71) lacks a zero-check on :
+		- owner = _owner (src/C1-control-acceso/Vulnerable.sol#72)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: naming-convention
+Parameter BovedaInicializableVulnerable.initialize(address)._owner (src/C1-control-acceso/Vulnerable.sol#71) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+Detector: immutable-states
+WalletTxOriginVulnerable.owner (src/C1-control-acceso/Vulnerable.sol#42) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C1-control-acceso/Vulnerable.sol analyzed (3 contracts with 102 detectors), 11 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C1-control-acceso/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C1-control-acceso' running

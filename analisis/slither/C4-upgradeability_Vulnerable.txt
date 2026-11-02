@@ -1,0 +1,12 @@
+WARNING:CryticCompile:Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+INFO:Slither:
+Detector: init-inherited
+LogicaVulnerable (src/C4-delegatecall-proxies/Vulnerable.sol#74-80) does not inherit from Initializable (lib/openzeppelin/proxy/utils/Initializable.sol#56-238).
+Reference: https://github.com/crytic/slither/wiki/Upgradeability-Checks#initializable-is-not-inherited
+INFO:Slither:
+Detector: order-vars-proxy
+Different variables between LogicaVulnerable (src/C4-delegatecall-proxies/Vulnerable.sol#74-80) and ProxyVulnerable (src/C4-delegatecall-proxies/Vulnerable.sol#51-70)
+	 LogicaVulnerable.owner (src/C4-delegatecall-proxies/Vulnerable.sol#75)
+	 ProxyVulnerable.implementation (src/C4-delegatecall-proxies/Vulnerable.sol#52)
+Reference: https://github.com/crytic/slither/wiki/Upgradeability-Checks#incorrect-variables-with-the-proxy
+INFO:Slither:2 findings, 12 detectors run

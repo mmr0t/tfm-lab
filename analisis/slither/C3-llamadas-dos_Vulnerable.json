@@ -1,0 +1,1136 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "reclamar",
+            "source_mapping": {
+              "start": 1599,
+              "length": 282,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "RecompensasVulnerable",
+                "source_mapping": {
+                  "start": 1418,
+                  "length": 465,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "reclamar()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(msg.sender).send(amount)",
+            "source_mapping": {
+              "start": 1842,
+              "length": 32,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                49
+              ],
+              "starting_column": 9,
+              "ending_column": 41
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "reclamar",
+                "source_mapping": {
+                  "start": 1599,
+                  "length": 282,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "RecompensasVulnerable",
+                    "source_mapping": {
+                      "start": 1418,
+                      "length": 465,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "reclamar()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "RecompensasVulnerable.reclamar() (src/C3-llamadas-dos/Vulnerable.sol#42-50) ignores return value by address(msg.sender).send(amount) (src/C3-llamadas-dos/Vulnerable.sol#49)\n",
+        "markdown": "[RecompensasVulnerable.reclamar()](src/C3-llamadas-dos/Vulnerable.sol#L42-L50) ignores return value by [address(msg.sender).send(amount)](src/C3-llamadas-dos/Vulnerable.sol#L49)\n",
+        "first_markdown_element": "src/C3-llamadas-dos/Vulnerable.sol#L42-L50",
+        "id": "0e776c91f03b7309e52427df0e2b33a9021823894eabfa86ffa04994322b40bf",
+        "check": "unchecked-send",
+        "impact": "Medium",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-send"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "repartir",
+            "source_mapping": {
+              "start": 2820,
+              "length": 438,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "RepartoVulnerable",
+                "source_mapping": {
+                  "start": 2334,
+                  "length": 926,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "repartir()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(participantes[i]).transfer(parte)",
+            "source_mapping": {
+              "start": 3174,
+              "length": 41,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                83
+              ],
+              "starting_column": 13,
+              "ending_column": 54
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "repartir",
+                "source_mapping": {
+                  "start": 2820,
+                  "length": 438,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "RepartoVulnerable",
+                    "source_mapping": {
+                      "start": 2334,
+                      "length": 926,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84,
+                        85,
+                        86,
+                        87
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "repartir()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "RepartoVulnerable.repartir() (src/C3-llamadas-dos/Vulnerable.sol#77-86) has external calls inside a loop: address(participantes[i]).transfer(parte) (src/C3-llamadas-dos/Vulnerable.sol#83)\n",
+        "markdown": "[RepartoVulnerable.repartir()](src/C3-llamadas-dos/Vulnerable.sol#L77-L86) has external calls inside a loop: [address(participantes[i]).transfer(parte)](src/C3-llamadas-dos/Vulnerable.sol#L83)\n",
+        "first_markdown_element": "src/C3-llamadas-dos/Vulnerable.sol#L77-L86",
+        "id": "5055bc16db08982947d29e625c2b4c27f28b4b237ecbc7a1b0373aeb05ca94af",
+        "check": "calls-loop",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "pujar",
+            "source_mapping": {
+              "start": 742,
+              "length": 401,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "SubastaVulnerable",
+                "source_mapping": {
+                  "start": 646,
+                  "length": 499,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "pujar()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(mejorPostor).transfer(mejorPuja)",
+            "source_mapping": {
+              "start": 1020,
+              "length": 40,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                23
+              ],
+              "starting_column": 13,
+              "ending_column": 53
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "pujar",
+                "source_mapping": {
+                  "start": 742,
+                  "length": 401,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "SubastaVulnerable",
+                    "source_mapping": {
+                      "start": 646,
+                      "length": 499,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "pujar()"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "external_calls"
+            }
+          },
+          {
+            "type": "node",
+            "name": "mejorPostor = msg.sender",
+            "source_mapping": {
+              "start": 1081,
+              "length": 24,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                26
+              ],
+              "starting_column": 9,
+              "ending_column": 33
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "pujar",
+                "source_mapping": {
+                  "start": 742,
+                  "length": 401,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "SubastaVulnerable",
+                    "source_mapping": {
+                      "start": 646,
+                      "length": 499,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "pujar()"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "variables_written",
+              "variable_name": "mejorPostor"
+            }
+          },
+          {
+            "type": "node",
+            "name": "mejorPuja = msg.value",
+            "source_mapping": {
+              "start": 1115,
+              "length": 21,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                27
+              ],
+              "starting_column": 9,
+              "ending_column": 30
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "pujar",
+                "source_mapping": {
+                  "start": 742,
+                  "length": 401,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "SubastaVulnerable",
+                    "source_mapping": {
+                      "start": 646,
+                      "length": 499,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "pujar()"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "variables_written",
+              "variable_name": "mejorPuja"
+            }
+          }
+        ],
+        "description": "Reentrancy in SubastaVulnerable.pujar() (src/C3-llamadas-dos/Vulnerable.sol#17-28):\n\tExternal calls:\n\t- address(mejorPostor).transfer(mejorPuja) (src/C3-llamadas-dos/Vulnerable.sol#23)\n\tState variables written after the call(s):\n\t- mejorPostor = msg.sender (src/C3-llamadas-dos/Vulnerable.sol#26)\n\t- mejorPuja = msg.value (src/C3-llamadas-dos/Vulnerable.sol#27)\n",
+        "markdown": "Reentrancy in [SubastaVulnerable.pujar()](src/C3-llamadas-dos/Vulnerable.sol#L17-L28):\n\tExternal calls:\n\t- [address(mejorPostor).transfer(mejorPuja)](src/C3-llamadas-dos/Vulnerable.sol#L23)\n\tState variables written after the call(s):\n\t- [mejorPostor = msg.sender](src/C3-llamadas-dos/Vulnerable.sol#L26)\n\t- [mejorPuja = msg.value](src/C3-llamadas-dos/Vulnerable.sol#L27)\n",
+        "first_markdown_element": "src/C3-llamadas-dos/Vulnerable.sol#L17-L28",
+        "id": "162fb9eb51cac515fba061884ef3593157f3ebe9f7a63f9191b9f7442f6c8c3d",
+        "check": "reentrancy-unlimited-gas",
+        "impact": "Informational",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-5"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "repartir",
+            "source_mapping": {
+              "start": 2820,
+              "length": 438,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "RepartoVulnerable",
+                "source_mapping": {
+                  "start": 2334,
+                  "length": 926,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "repartir()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(participantes[i]).transfer(parte)",
+            "source_mapping": {
+              "start": 3174,
+              "length": 41,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                83
+              ],
+              "starting_column": 13,
+              "ending_column": 54
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "repartir",
+                "source_mapping": {
+                  "start": 2820,
+                  "length": 438,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "RepartoVulnerable",
+                    "source_mapping": {
+                      "start": 2334,
+                      "length": 926,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84,
+                        85,
+                        86,
+                        87
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "repartir()"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "external_calls"
+            }
+          },
+          {
+            "type": "node",
+            "name": "repartido = true",
+            "source_mapping": {
+              "start": 3235,
+              "length": 16,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                85
+              ],
+              "starting_column": 9,
+              "ending_column": 25
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "repartir",
+                "source_mapping": {
+                  "start": 2820,
+                  "length": 438,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "RepartoVulnerable",
+                    "source_mapping": {
+                      "start": 2334,
+                      "length": 926,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84,
+                        85,
+                        86,
+                        87
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "repartir()"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "variables_written",
+              "variable_name": "repartido"
+            }
+          }
+        ],
+        "description": "Reentrancy in RepartoVulnerable.repartir() (src/C3-llamadas-dos/Vulnerable.sol#77-86):\n\tExternal calls:\n\t- address(participantes[i]).transfer(parte) (src/C3-llamadas-dos/Vulnerable.sol#83)\n\tState variables written after the call(s):\n\t- repartido = true (src/C3-llamadas-dos/Vulnerable.sol#85)\n",
+        "markdown": "Reentrancy in [RepartoVulnerable.repartir()](src/C3-llamadas-dos/Vulnerable.sol#L77-L86):\n\tExternal calls:\n\t- [address(participantes[i]).transfer(parte)](src/C3-llamadas-dos/Vulnerable.sol#L83)\n\tState variables written after the call(s):\n\t- [repartido = true](src/C3-llamadas-dos/Vulnerable.sol#L85)\n",
+        "first_markdown_element": "src/C3-llamadas-dos/Vulnerable.sol#L77-L86",
+        "id": "ddae75a706e2c75d2b2dd483c1a4806735da5797c4fe0020f91f91fe381ba8fc",
+        "check": "reentrancy-unlimited-gas",
+        "impact": "Informational",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-5"
+      },
+      {
+        "elements": [
+          {
+            "type": "node",
+            "name": "i < participantes.length",
+            "source_mapping": {
+              "start": 3129,
+              "length": 24,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                82
+              ],
+              "starting_column": 29,
+              "ending_column": 53
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "repartir",
+                "source_mapping": {
+                  "start": 2820,
+                  "length": 438,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "RepartoVulnerable",
+                    "source_mapping": {
+                      "start": 2334,
+                      "length": 926,
+                      "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                      "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84,
+                        85,
+                        86,
+                        87
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "repartir()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Loop condition i < participantes.length (src/C3-llamadas-dos/Vulnerable.sol#82) should use cached array length instead of referencing `length` member of the storage array.\n ",
+        "markdown": "Loop condition [i < participantes.length](src/C3-llamadas-dos/Vulnerable.sol#L82) should use cached array length instead of referencing `length` member of the storage array.\n ",
+        "first_markdown_element": "src/C3-llamadas-dos/Vulnerable.sol#L82",
+        "id": "f9d08d2a43baecea19688d6a9471867863ddb37935a6542eb9f36d2f7af2763e",
+        "check": "cache-array-length",
+        "impact": "Optimization",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#cache-array-length"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "organizador",
+            "source_mapping": {
+              "start": 2367,
+              "length": 26,
+              "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+              "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                60
+              ],
+              "starting_column": 5,
+              "ending_column": 31
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "RepartoVulnerable",
+                "source_mapping": {
+                  "start": 2334,
+                  "length": 926,
+                  "filename_relative": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos/Vulnerable.sol",
+                  "filename_short": "src/C3-llamadas-dos/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84,
+                    85,
+                    86,
+                    87
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "RepartoVulnerable.organizador (src/C3-llamadas-dos/Vulnerable.sol#60) should be immutable \n",
+        "markdown": "[RepartoVulnerable.organizador](src/C3-llamadas-dos/Vulnerable.sol#L60) should be immutable \n",
+        "first_markdown_element": "src/C3-llamadas-dos/Vulnerable.sol#L60",
+        "id": "d71d4d12b904244eff011d3db8ef3e0d25c7e60cceff8cca6584bd3d1fb394db",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable"
+      }
+    ]
+  }
+}

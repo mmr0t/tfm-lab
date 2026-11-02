@@ -1,0 +1,17 @@
+
+Detector: low-level-calls
+Low level call in SubastaFixed.retirarReembolso() (src/C3-llamadas-dos/Fixed.sol#28-34):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C3-llamadas-dos/Fixed.sol#32)
+Low level call in RecompensasFixed.reclamar() (src/C3-llamadas-dos/Fixed.sol#47-55):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C3-llamadas-dos/Fixed.sol#53)
+Low level call in RepartoFixed.reclamar() (src/C3-llamadas-dos/Fixed.sol#87-94):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C3-llamadas-dos/Fixed.sol#92)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+Detector: immutable-states
+RepartoFixed.organizador (src/C3-llamadas-dos/Fixed.sol#64) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C3-llamadas-dos/Fixed.sol analyzed (3 contracts with 102 detectors), 4 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C3-llamadas-dos/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos' running

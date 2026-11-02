@@ -1,0 +1,56 @@
+
+Detector: controlled-delegatecall
+MonederoFixed.ejecutar(bytes) (src/C4-delegatecall-proxies/Fixed.sol#26-30) uses delegatecall to a input-controlled function id
+	- (ok,None) = logica.delegatecall(data) (src/C4-delegatecall-proxies/Fixed.sol#28)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#controlled-delegatecall
+
+Detector: incorrect-equality
+MonederoFixed.isSolved() (src/C4-delegatecall-proxies/Fixed.sol#37-39) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C4-delegatecall-proxies/Fixed.sol#38)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: locked-ether
+Contract locking ether found:
+	Contract ProxyFixed (src/C4-delegatecall-proxies/Fixed.sol#46-74) has payable functions:
+	 - ProxyFixed.fallback() (src/C4-delegatecall-proxies/Fixed.sol#63-73)
+	But does not have a function to withdraw the ether
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether
+
+Detector: missing-zero-check
+MonederoFixed.constructor(address)._logica (src/C4-delegatecall-proxies/Fixed.sol#21) lacks a zero-check on :
+		- logica = _logica (src/C4-delegatecall-proxies/Fixed.sol#23)
+LogicaFixed.setOwner(address).o (src/C4-delegatecall-proxies/Fixed.sol#81) lacks a zero-check on :
+		- owner = o (src/C4-delegatecall-proxies/Fixed.sol#82)
+LogicaUUPSFixed.initialize(address)._owner (src/C4-delegatecall-proxies/Fixed.sol#102) lacks a zero-check on :
+		- owner = _owner (src/C4-delegatecall-proxies/Fixed.sol#103)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: assembly
+ProxyFixed.constructor(address) (src/C4-delegatecall-proxies/Fixed.sol#51-55) uses assembly
+	- INLINE ASM (src/C4-delegatecall-proxies/Fixed.sol#52-54)
+ProxyFixed._impl() (src/C4-delegatecall-proxies/Fixed.sol#57-61) uses assembly
+	- INLINE ASM (src/C4-delegatecall-proxies/Fixed.sol#58-60)
+ProxyFixed.fallback() (src/C4-delegatecall-proxies/Fixed.sol#63-73) uses assembly
+	- INLINE ASM (src/C4-delegatecall-proxies/Fixed.sol#65-72)
+LogicaUUPSFixed.upgradeTo(address) (src/C4-delegatecall-proxies/Fixed.sol#106-111) uses assembly
+	- INLINE ASM (src/C4-delegatecall-proxies/Fixed.sol#108-110)
+LogicaUUPSFixed.implementacion() (src/C4-delegatecall-proxies/Fixed.sol#113-117) uses assembly
+	- INLINE ASM (src/C4-delegatecall-proxies/Fixed.sol#114-116)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Detector: low-level-calls
+Low level call in MonederoFixed.ejecutar(bytes) (src/C4-delegatecall-proxies/Fixed.sol#26-30):
+	- (ok,None) = logica.delegatecall(data) (src/C4-delegatecall-proxies/Fixed.sol#28)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+
+Detector: naming-convention
+Parameter LogicaUUPSFixed.initialize(address)._owner (src/C4-delegatecall-proxies/Fixed.sol#102) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+Detector: immutable-states
+MonederoFixed.owner (src/C4-delegatecall-proxies/Fixed.sol#18) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C4-delegatecall-proxies/Fixed.sol analyzed (5 contracts with 102 detectors), 14 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C4-delegatecall-proxies/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies' running

@@ -1,0 +1,14 @@
+
+Detector: missing-zero-check
+PermisosFixed.constructor(address)._f (src/C10-validacion-entradas/Fixed.sol#38) lacks a zero-check on :
+		- firmante = _f (src/C10-validacion-entradas/Fixed.sol#39)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: immutable-states
+BovedaFixed.owner (src/C10-validacion-entradas/Fixed.sol#11) should be immutable 
+PermisosFixed.firmante (src/C10-validacion-entradas/Fixed.sol#36) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C10-validacion-entradas/Fixed.sol analyzed (2 contracts with 102 detectors), 3 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C10-validacion-entradas/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C10-validacion-entradas' running

@@ -1,0 +1,34 @@
+
+Detector: arbitrary-send-eth
+PagosSeguro.retirar(address,uint256,uint256,bytes) (src/C6-firmas/Fixed.sol#32-38) sends eth to arbitrary user
+	Dangerous calls:
+	- address(to).transfer(amount) (src/C6-firmas/Fixed.sol#37)
+PagosMaleableFixed.retirar(address,uint256,bytes) (src/C6-firmas/Fixed.sol#58-66) sends eth to arbitrary user
+	Dangerous calls:
+	- address(to).transfer(amount) (src/C6-firmas/Fixed.sol#65)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
+
+Detector: incorrect-equality
+PagosSeguro.isSolved() (src/C6-firmas/Fixed.sol#40-42) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C6-firmas/Fixed.sol#41)
+PagosMaleableFixed.isSolved() (src/C6-firmas/Fixed.sol#68-70) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C6-firmas/Fixed.sol#69)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: missing-zero-check
+PagosSeguro.constructor(address)._f (src/C6-firmas/Fixed.sol#23) lacks a zero-check on :
+		- firmante = _f (src/C6-firmas/Fixed.sol#24)
+PagosMaleableFixed.constructor(address)._f (src/C6-firmas/Fixed.sol#54) lacks a zero-check on :
+		- firmante = _f (src/C6-firmas/Fixed.sol#55)
+PagosMaleableFixed.retirar(address,uint256,bytes).to (src/C6-firmas/Fixed.sol#58) lacks a zero-check on :
+		- address(to).transfer(amount) (src/C6-firmas/Fixed.sol#65)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: immutable-states
+PagosMaleableFixed.firmante (src/C6-firmas/Fixed.sol#51) should be immutable 
+PagosSeguro.firmante (src/C6-firmas/Fixed.sol#17) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C6-firmas/Fixed.sol analyzed (14 contracts with 102 detectors), 9 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C6-firmas/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C6-firmas' running

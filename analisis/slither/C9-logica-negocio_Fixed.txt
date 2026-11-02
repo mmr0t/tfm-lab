@@ -1,0 +1,9 @@
+
+Detector: incorrect-equality
+StakingFixed.isSolved() (src/C9-logica-negocio/Fixed.sol#27-29) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C9-logica-negocio/Fixed.sol#28)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+src/C9-logica-negocio/Fixed.sol analyzed (1 contracts with 102 detectors), 1 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C9-logica-negocio/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C9-logica-negocio' running

@@ -1,0 +1,75 @@
+
+Detector: unchecked-transfer
+SimpleAMM.init(uint256,uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#88-94) ignores return value by token.transferFrom(msg.sender,address(this),t) (src/C7-oraculo-flashloan/Vulnerable.sol#89)
+SimpleAMM.init(uint256,uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#88-94) ignores return value by usdc.transferFrom(msg.sender,address(this),u) (src/C7-oraculo-flashloan/Vulnerable.sol#90)
+SimpleAMM.swapUsdcForToken(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#100-110) ignores return value by usdc.transferFrom(msg.sender,address(this),usdcIn) (src/C7-oraculo-flashloan/Vulnerable.sol#101)
+SimpleAMM.swapUsdcForToken(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#100-110) ignores return value by token.transfer(msg.sender,tokenOut) (src/C7-oraculo-flashloan/Vulnerable.sol#109)
+SimpleAMM.swapTokenForUsdc(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#112-122) ignores return value by token.transferFrom(msg.sender,address(this),tokenIn) (src/C7-oraculo-flashloan/Vulnerable.sol#113)
+SimpleAMM.swapTokenForUsdc(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#112-122) ignores return value by usdc.transfer(msg.sender,usdcOut) (src/C7-oraculo-flashloan/Vulnerable.sol#121)
+FlashLender.flashLoan(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#137-142) ignores return value by usdc.transfer(msg.sender,amount) (src/C7-oraculo-flashloan/Vulnerable.sol#139)
+PrestamosVulnerable.depositar(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#168-171) ignores return value by token.transferFrom(msg.sender,address(this),amt) (src/C7-oraculo-flashloan/Vulnerable.sol#169)
+PrestamosVulnerable.pedir(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#173-178) ignores return value by usdc.transfer(msg.sender,amt) (src/C7-oraculo-flashloan/Vulnerable.sol#177)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-transfer
+
+Detector: incorrect-equality
+PrestamosVulnerable.isSolved() (src/C7-oraculo-flashloan/Vulnerable.sol#181-183) uses a dangerous strict equality:
+	- usdc.balanceOf(address(this)) == 0 (src/C7-oraculo-flashloan/Vulnerable.sol#182)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: reentrancy-benign
+Reentrancy in PrestamosVulnerable.depositar(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#168-171):
+	External calls:
+	- token.transferFrom(msg.sender,address(this),amt) (src/C7-oraculo-flashloan/Vulnerable.sol#169)
+	State variables written after the call(s):
+	- colateral[msg.sender] += amt (src/C7-oraculo-flashloan/Vulnerable.sol#170)
+Reentrancy in SimpleAMM.init(uint256,uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#88-94):
+	External calls:
+	- token.transferFrom(msg.sender,address(this),t) (src/C7-oraculo-flashloan/Vulnerable.sol#89)
+	- usdc.transferFrom(msg.sender,address(this),u) (src/C7-oraculo-flashloan/Vulnerable.sol#90)
+	State variables written after the call(s):
+	- _acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#91)
+		- precioAcumulado += (reserveUsdc * 1e18 * transcurrido) / reserveToken (src/C7-oraculo-flashloan/Vulnerable.sol#71)
+	- reserveToken = t (src/C7-oraculo-flashloan/Vulnerable.sol#92)
+	- reserveUsdc = u (src/C7-oraculo-flashloan/Vulnerable.sol#93)
+	- _acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#91)
+		- ultimaActualizacion = block.timestamp (src/C7-oraculo-flashloan/Vulnerable.sol#73)
+Reentrancy in SimpleAMM.swapTokenForUsdc(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#112-122):
+	External calls:
+	- token.transferFrom(msg.sender,address(this),tokenIn) (src/C7-oraculo-flashloan/Vulnerable.sol#113)
+	State variables written after the call(s):
+	- _acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#118)
+		- precioAcumulado += (reserveUsdc * 1e18 * transcurrido) / reserveToken (src/C7-oraculo-flashloan/Vulnerable.sol#71)
+	- reserveToken = newToken (src/C7-oraculo-flashloan/Vulnerable.sol#119)
+	- reserveUsdc = newUsdc (src/C7-oraculo-flashloan/Vulnerable.sol#120)
+	- _acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#118)
+		- ultimaActualizacion = block.timestamp (src/C7-oraculo-flashloan/Vulnerable.sol#73)
+Reentrancy in SimpleAMM.swapUsdcForToken(uint256) (src/C7-oraculo-flashloan/Vulnerable.sol#100-110):
+	External calls:
+	- usdc.transferFrom(msg.sender,address(this),usdcIn) (src/C7-oraculo-flashloan/Vulnerable.sol#101)
+	State variables written after the call(s):
+	- _acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#106)
+		- precioAcumulado += (reserveUsdc * 1e18 * transcurrido) / reserveToken (src/C7-oraculo-flashloan/Vulnerable.sol#71)
+	- reserveToken = newToken (src/C7-oraculo-flashloan/Vulnerable.sol#107)
+	- reserveUsdc = newUsdc (src/C7-oraculo-flashloan/Vulnerable.sol#108)
+	- _acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#106)
+		- ultimaActualizacion = block.timestamp (src/C7-oraculo-flashloan/Vulnerable.sol#73)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+
+Detector: timestamp
+SimpleAMM._acumular() (src/C7-oraculo-flashloan/Vulnerable.sol#68-74) uses timestamp for comparisons
+	Dangerous comparisons:
+	- transcurrido > 0 && reserveToken > 0 (src/C7-oraculo-flashloan/Vulnerable.sol#70)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+Detector: immutable-states
+FlashLender.usdc (src/C7-oraculo-flashloan/Vulnerable.sol#131) should be immutable 
+PrestamosVulnerable.amm (src/C7-oraculo-flashloan/Vulnerable.sol#152) should be immutable 
+PrestamosVulnerable.token (src/C7-oraculo-flashloan/Vulnerable.sol#150) should be immutable 
+PrestamosVulnerable.usdc (src/C7-oraculo-flashloan/Vulnerable.sol#151) should be immutable 
+SimpleAMM.token (src/C7-oraculo-flashloan/Vulnerable.sol#57) should be immutable 
+SimpleAMM.usdc (src/C7-oraculo-flashloan/Vulnerable.sol#58) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C7-oraculo-flashloan/Vulnerable.sol analyzed (5 contracts with 102 detectors), 21 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C7-oraculo-flashloan/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C7-oraculo-flashloan' running

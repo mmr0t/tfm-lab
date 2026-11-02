@@ -1,0 +1,32 @@
+
+Detector: erc20-interface
+WalletTxOriginFixed (src/C1-control-acceso/Fixed.sol#32-49) has incorrect ERC20 function interface:WalletTxOriginFixed.transfer(address,uint256) (src/C1-control-acceso/Fixed.sol#41-44)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-erc20-interface
+
+Detector: incorrect-equality
+BovedaFixed.isSolved() (src/C1-control-acceso/Fixed.sol#24-26) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C1-control-acceso/Fixed.sol#25)
+WalletTxOriginFixed.isSolved() (src/C1-control-acceso/Fixed.sol#46-48) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C1-control-acceso/Fixed.sol#47)
+BovedaInicializableFixed.isSolved() (src/C1-control-acceso/Fixed.sol#74-76) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C1-control-acceso/Fixed.sol#75)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: missing-zero-check
+WalletTxOriginFixed.transfer(address,uint256).to (src/C1-control-acceso/Fixed.sol#41) lacks a zero-check on :
+		- to.transfer(amount) (src/C1-control-acceso/Fixed.sol#43)
+BovedaInicializableFixed.initialize(address)._owner (src/C1-control-acceso/Fixed.sol#63) lacks a zero-check on :
+		- owner = _owner (src/C1-control-acceso/Fixed.sol#64)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: naming-convention
+Parameter BovedaInicializableFixed.initialize(address)._owner (src/C1-control-acceso/Fixed.sol#63) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+
+Detector: immutable-states
+WalletTxOriginFixed.owner (src/C1-control-acceso/Fixed.sol#33) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C1-control-acceso/Fixed.sol analyzed (6 contracts with 102 detectors), 8 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C1-control-acceso/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C1-control-acceso' running

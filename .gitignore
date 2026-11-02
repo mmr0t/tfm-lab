@@ -1,0 +1,41 @@
+# Foundry: artefactos de compilación y caché (perfil por defecto y perfil polonio)
+out/
+cache/
+out-polonio/
+cache-polonio/
+broadcast/
+
+# Foundry: informes generados
+lcov.info
+coverage/
+.gas-snapshot
+
+# Secretos y variables de entorno
+.env
+.env.*
+!.env.example
+
+# Slither / crytic-compile y Python (analisis/run-slither.sh)
+crytic-export/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node (por si se usan herramientas como solhint o prettier)
+node_modules/
+
+# Editores e IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs y temporales
+*.log
+*.tmp

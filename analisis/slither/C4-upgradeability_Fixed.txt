@@ -1,0 +1,6 @@
+WARNING:CryticCompile:Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+INFO:Slither:
+Detector: init-inherited
+LogicaFixed (src/C4-delegatecall-proxies/Fixed.sol#78-84) does not inherit from Initializable (lib/openzeppelin/proxy/utils/Initializable.sol#56-238).
+Reference: https://github.com/crytic/slither/wiki/Upgradeability-Checks#initializable-is-not-inherited
+INFO:Slither:1 findings, 12 detectors run

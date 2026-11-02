@@ -1,0 +1,21 @@
+
+Detector: arbitrary-send-eth
+LoteriaFixed.sortear() (src/C5-aleatoriedad/Fixed.sol#36-54) sends eth to arbitrary user
+	Dangerous calls:
+	- address(ganador).transfer(address(this).balance) (src/C5-aleatoriedad/Fixed.sol#52)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
+
+Detector: weak-prng
+LoteriaFixed.sortear() (src/C5-aleatoriedad/Fixed.sol#36-54) uses a weak PRNG: "aleatorio % 2 == 0 (src/C5-aleatoriedad/Fixed.sol#51)" 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#weak-PRNG
+
+Detector: incorrect-equality
+LoteriaFixed.isSolved() (src/C5-aleatoriedad/Fixed.sol#56-58) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C5-aleatoriedad/Fixed.sol#57)
+LoteriaFixed.sortear() (src/C5-aleatoriedad/Fixed.sol#36-54) uses a dangerous strict equality:
+	- aleatorio % 2 == 0 (src/C5-aleatoriedad/Fixed.sol#51)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+src/C5-aleatoriedad/Fixed.sol analyzed (1 contracts with 102 detectors), 4 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C5-aleatoriedad/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C5-aleatoriedad' running

@@ -1,0 +1,27 @@
+
+Detector: incorrect-equality
+PagosVulnerable.isSolved() (src/C6-firmas/Vulnerable.sol#24-26) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C6-firmas/Vulnerable.sol#25)
+PagosMaleableVulnerable.isSolved() (src/C6-firmas/Vulnerable.sol#51-53) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C6-firmas/Vulnerable.sol#52)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: missing-zero-check
+PagosVulnerable.constructor(address)._f (src/C6-firmas/Vulnerable.sol#14) lacks a zero-check on :
+		- firmante = _f (src/C6-firmas/Vulnerable.sol#15)
+PagosVulnerable.retirar(address,uint256,uint8,bytes32,bytes32).to (src/C6-firmas/Vulnerable.sol#18) lacks a zero-check on :
+		- address(to).transfer(amount) (src/C6-firmas/Vulnerable.sol#21)
+PagosMaleableVulnerable.constructor(address)._f (src/C6-firmas/Vulnerable.sol#37) lacks a zero-check on :
+		- firmante = _f (src/C6-firmas/Vulnerable.sol#38)
+PagosMaleableVulnerable.retirar(address,uint256,uint8,bytes32,bytes32).to (src/C6-firmas/Vulnerable.sol#41) lacks a zero-check on :
+		- address(to).transfer(amount) (src/C6-firmas/Vulnerable.sol#48)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: immutable-states
+PagosMaleableVulnerable.firmante (src/C6-firmas/Vulnerable.sol#34) should be immutable 
+PagosVulnerable.firmante (src/C6-firmas/Vulnerable.sol#12) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C6-firmas/Vulnerable.sol analyzed (2 contracts with 102 detectors), 8 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C6-firmas/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C6-firmas' running

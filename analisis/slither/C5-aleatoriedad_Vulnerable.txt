@@ -1,0 +1,40 @@
+
+Detector: arbitrary-send-eth
+LoteriaVulnerable.jugar() (src/C5-aleatoriedad/Vulnerable.sol#13-24) sends eth to arbitrary user
+	Dangerous calls:
+	- address(msg.sender).transfer(address(this).balance) (src/C5-aleatoriedad/Vulnerable.sol#22)
+AtacanteLoteria.atacar() (src/C5-aleatoriedad/Vulnerable.sol#46-49) sends eth to arbitrary user
+	Dangerous calls:
+	- loteria.jugar{value: 1000000000000000000}() (src/C5-aleatoriedad/Vulnerable.sol#48)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations
+
+Detector: weak-prng
+LoteriaVulnerable.jugar() (src/C5-aleatoriedad/Vulnerable.sol#13-24) uses a weak PRNG: "aleatorio % 2 == 0 (src/C5-aleatoriedad/Vulnerable.sol#21)" 
+AtacanteLoteria.vaAGanar() (src/C5-aleatoriedad/Vulnerable.sol#39-44) uses a weak PRNG: "aleatorio % 2 == 0 (src/C5-aleatoriedad/Vulnerable.sol#43)" 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#weak-PRNG
+
+Detector: incorrect-equality
+LoteriaVulnerable.isSolved() (src/C5-aleatoriedad/Vulnerable.sol#26-28) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C5-aleatoriedad/Vulnerable.sol#27)
+LoteriaVulnerable.jugar() (src/C5-aleatoriedad/Vulnerable.sol#13-24) uses a dangerous strict equality:
+	- aleatorio % 2 == 0 (src/C5-aleatoriedad/Vulnerable.sol#21)
+AtacanteLoteria.vaAGanar() (src/C5-aleatoriedad/Vulnerable.sol#39-44) uses a dangerous strict equality:
+	- aleatorio % 2 == 0 (src/C5-aleatoriedad/Vulnerable.sol#43)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: timestamp
+LoteriaVulnerable.jugar() (src/C5-aleatoriedad/Vulnerable.sol#13-24) uses timestamp for comparisons
+	Dangerous comparisons:
+	- aleatorio % 2 == 0 (src/C5-aleatoriedad/Vulnerable.sol#21)
+AtacanteLoteria.vaAGanar() (src/C5-aleatoriedad/Vulnerable.sol#39-44) uses timestamp for comparisons
+	Dangerous comparisons:
+	- aleatorio % 2 == 0 (src/C5-aleatoriedad/Vulnerable.sol#43)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+
+Detector: immutable-states
+AtacanteLoteria.loteria (src/C5-aleatoriedad/Vulnerable.sol#33) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C5-aleatoriedad/Vulnerable.sol analyzed (2 contracts with 102 detectors), 10 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C5-aleatoriedad/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C5-aleatoriedad' running

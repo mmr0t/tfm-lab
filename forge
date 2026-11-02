@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Ejecuta forge usando la imagen oficial de Foundry, evitando tener que instalar
+# la toolchain en el equipo.
+# Uso: ./forge test   |   ./forge build   |   ./forge test --match-contract C1_ControlAcceso
+#
+# La imagen se fija por digest (forge 1.8.7) para que los resultados sean
+# reproducibles: una etiqueta como "latest" puede cambiar con el tiempo.
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+IMAGE="ghcr.io/foundry-rs/foundry@sha256:6fec6dc8249fb0231144b159e4ee1d86e486e3dc8eccb09a25e5e16ce494236b"
+exec docker run --rm -t -e FOUNDRY_PROFILE \
+  -v "$ROOT":/app -w /app \
+  -v foundry-svm:/root/.svm \
+  --entrypoint forge \
+  "$IMAGE" "$@"

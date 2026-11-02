@@ -1,0 +1,1971 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "ejecutar",
+            "source_mapping": {
+              "start": 829,
+              "length": 227,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                22,
+                23,
+                24,
+                25,
+                26
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "MonederoVulnerable",
+                "source_mapping": {
+                  "start": 695,
+                  "length": 622,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "ejecutar(address,bytes)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "(ok,None) = logica.delegatecall(data)",
+            "source_mapping": {
+              "start": 965,
+              "length": 39,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                24
+              ],
+              "starting_column": 9,
+              "ending_column": 48
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "ejecutar",
+                "source_mapping": {
+                  "start": 829,
+                  "length": 227,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    22,
+                    23,
+                    24,
+                    25,
+                    26
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "MonederoVulnerable",
+                    "source_mapping": {
+                      "start": 695,
+                      "length": 622,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "ejecutar(address,bytes)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "MonederoVulnerable.ejecutar(address,bytes) (src/C4-delegatecall-proxies/Vulnerable.sol#22-26) uses delegatecall to a input-controlled function id\n\t- (ok,None) = logica.delegatecall(data) (src/C4-delegatecall-proxies/Vulnerable.sol#24)\n",
+        "markdown": "[MonederoVulnerable.ejecutar(address,bytes)](src/C4-delegatecall-proxies/Vulnerable.sol#L22-L26) uses delegatecall to a input-controlled function id\n\t- [(ok,None) = logica.delegatecall(data)](src/C4-delegatecall-proxies/Vulnerable.sol#L24)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L22-L26",
+        "id": "c34ee9dda6da2eb05dcc680de8b4d1a2b2b9f7d6e91f61b5d5e2a2e5ded7366a",
+        "check": "controlled-delegatecall",
+        "impact": "High",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#controlled-delegatecall"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "isSolved",
+            "source_mapping": {
+              "start": 1216,
+              "length": 99,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                33,
+                34,
+                35
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "MonederoVulnerable",
+                "source_mapping": {
+                  "start": 695,
+                  "length": 622,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "isSolved()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(this).balance == 0",
+            "source_mapping": {
+              "start": 1275,
+              "length": 33,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                34
+              ],
+              "starting_column": 9,
+              "ending_column": 42
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "isSolved",
+                "source_mapping": {
+                  "start": 1216,
+                  "length": 99,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    33,
+                    34,
+                    35
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "MonederoVulnerable",
+                    "source_mapping": {
+                      "start": 695,
+                      "length": 622,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "isSolved()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "MonederoVulnerable.isSolved() (src/C4-delegatecall-proxies/Vulnerable.sol#33-35) uses a dangerous strict equality:\n\t- address(this).balance == 0 (src/C4-delegatecall-proxies/Vulnerable.sol#34)\n",
+        "markdown": "[MonederoVulnerable.isSolved()](src/C4-delegatecall-proxies/Vulnerable.sol#L33-L35) uses a dangerous strict equality:\n\t- [address(this).balance == 0](src/C4-delegatecall-proxies/Vulnerable.sol#L34)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L33-L35",
+        "id": "a11a2ea3ecfcd4af6b3a334dfd189c6ba5ce466a9805a147cba84b161ea3b481",
+        "check": "incorrect-equality",
+        "impact": "Medium",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities"
+      },
+      {
+        "elements": [
+          {
+            "type": "contract",
+            "name": "ProxyVulnerable",
+            "source_mapping": {
+              "start": 1875,
+              "length": 589,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70
+              ],
+              "starting_column": 1,
+              "ending_column": 2
+            }
+          },
+          {
+            "type": "function",
+            "name": "fallback",
+            "source_mapping": {
+              "start": 2063,
+              "length": 399,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "ProxyVulnerable",
+                "source_mapping": {
+                  "start": 1875,
+                  "length": 589,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "fallback()"
+            }
+          }
+        ],
+        "description": "Contract locking ether found:\n\tContract ProxyVulnerable (src/C4-delegatecall-proxies/Vulnerable.sol#51-70) has payable functions:\n\t - ProxyVulnerable.fallback() (src/C4-delegatecall-proxies/Vulnerable.sol#59-69)\n\tBut does not have a function to withdraw the ether\n",
+        "markdown": "Contract locking ether found:\n\tContract [ProxyVulnerable](src/C4-delegatecall-proxies/Vulnerable.sol#L51-L70) has payable functions:\n\t - [ProxyVulnerable.fallback()](src/C4-delegatecall-proxies/Vulnerable.sol#L59-L69)\n\tBut does not have a function to withdraw the ether\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L51-L70",
+        "id": "86c3f2d915f2a31f904303fb1c9e391d55dc1fe1f11d16ef61a074305064b9a4",
+        "check": "locked-ether",
+        "impact": "Medium",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#contracts-that-lock-ether"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_owner",
+            "source_mapping": {
+              "start": 3766,
+              "length": 14,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                98
+              ],
+              "starting_column": 25,
+              "ending_column": 39
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "initialize",
+                "source_mapping": {
+                  "start": 3746,
+                  "length": 88,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    98,
+                    99,
+                    100
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaUUPSVulnerable",
+                    "source_mapping": {
+                      "start": 3406,
+                      "length": 746,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        90,
+                        91,
+                        92,
+                        93,
+                        94,
+                        95,
+                        96,
+                        97,
+                        98,
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        104,
+                        105,
+                        106,
+                        107,
+                        108,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        114
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "initialize(address)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "owner = _owner",
+            "source_mapping": {
+              "start": 3813,
+              "length": 14,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                99
+              ],
+              "starting_column": 9,
+              "ending_column": 23
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "initialize",
+                "source_mapping": {
+                  "start": 3746,
+                  "length": 88,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    98,
+                    99,
+                    100
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaUUPSVulnerable",
+                    "source_mapping": {
+                      "start": 3406,
+                      "length": 746,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        90,
+                        91,
+                        92,
+                        93,
+                        94,
+                        95,
+                        96,
+                        97,
+                        98,
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        104,
+                        105,
+                        106,
+                        107,
+                        108,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        114
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "initialize(address)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "LogicaUUPSVulnerable.initialize(address)._owner (src/C4-delegatecall-proxies/Vulnerable.sol#98) lacks a zero-check on :\n\t\t- owner = _owner (src/C4-delegatecall-proxies/Vulnerable.sol#99)\n",
+        "markdown": "[LogicaUUPSVulnerable.initialize(address)._owner](src/C4-delegatecall-proxies/Vulnerable.sol#L98) lacks a zero-check on :\n\t\t- [owner = _owner](src/C4-delegatecall-proxies/Vulnerable.sol#L99)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L98",
+        "id": "29d4b81e135be5eddf0ad6a0c144b23f892dfc820012980cf50b703d6fee43b4",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "o",
+            "source_mapping": {
+              "start": 2762,
+              "length": 9,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                77
+              ],
+              "starting_column": 23,
+              "ending_column": 32
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "setOwner",
+                "source_mapping": {
+                  "start": 2744,
+                  "length": 64,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    77,
+                    78,
+                    79
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaVulnerable",
+                    "source_mapping": {
+                      "start": 2627,
+                      "length": 183,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "setOwner(address)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "owner = o",
+            "source_mapping": {
+              "start": 2792,
+              "length": 9,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                78
+              ],
+              "starting_column": 9,
+              "ending_column": 18
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "setOwner",
+                "source_mapping": {
+                  "start": 2744,
+                  "length": 64,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    77,
+                    78,
+                    79
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaVulnerable",
+                    "source_mapping": {
+                      "start": 2627,
+                      "length": 183,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "setOwner(address)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "LogicaVulnerable.setOwner(address).o (src/C4-delegatecall-proxies/Vulnerable.sol#77) lacks a zero-check on :\n\t\t- owner = o (src/C4-delegatecall-proxies/Vulnerable.sol#78)\n",
+        "markdown": "[LogicaVulnerable.setOwner(address).o](src/C4-delegatecall-proxies/Vulnerable.sol#L77) lacks a zero-check on :\n\t\t- [owner = o](src/C4-delegatecall-proxies/Vulnerable.sol#L78)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L77",
+        "id": "5372bd3e84ad5f3837b4ba668b8499218d3f958c23f14cf697c0432c97f9d728",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "impl",
+            "source_mapping": {
+              "start": 1964,
+              "length": 12,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                54
+              ],
+              "starting_column": 17,
+              "ending_column": 29
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 1952,
+                  "length": 64,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    54,
+                    55,
+                    56
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "ProxyVulnerable",
+                    "source_mapping": {
+                      "start": 1875,
+                      "length": 589,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(address)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "implementation = impl",
+            "source_mapping": {
+              "start": 1988,
+              "length": 21,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                55
+              ],
+              "starting_column": 9,
+              "ending_column": 30
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 1952,
+                  "length": 64,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    54,
+                    55,
+                    56
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "ProxyVulnerable",
+                    "source_mapping": {
+                      "start": 1875,
+                      "length": 589,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(address)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "ProxyVulnerable.constructor(address).impl (src/C4-delegatecall-proxies/Vulnerable.sol#54) lacks a zero-check on :\n\t\t- implementation = impl (src/C4-delegatecall-proxies/Vulnerable.sol#55)\n",
+        "markdown": "[ProxyVulnerable.constructor(address).impl](src/C4-delegatecall-proxies/Vulnerable.sol#L54) lacks a zero-check on :\n\t\t- [implementation = impl](src/C4-delegatecall-proxies/Vulnerable.sol#L55)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L54",
+        "id": "6349018202dd4f1ef5c90455da6e69990b68ed23c27f5fe1c53f1c6f349b73e5",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "logica",
+            "source_mapping": {
+              "start": 847,
+              "length": 14,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                22
+              ],
+              "starting_column": 23,
+              "ending_column": 37
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "ejecutar",
+                "source_mapping": {
+                  "start": 829,
+                  "length": 227,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    22,
+                    23,
+                    24,
+                    25,
+                    26
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "MonederoVulnerable",
+                    "source_mapping": {
+                      "start": 695,
+                      "length": 622,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "ejecutar(address,bytes)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "(ok,None) = logica.delegatecall(data)",
+            "source_mapping": {
+              "start": 965,
+              "length": 39,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                24
+              ],
+              "starting_column": 9,
+              "ending_column": 48
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "ejecutar",
+                "source_mapping": {
+                  "start": 829,
+                  "length": 227,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    22,
+                    23,
+                    24,
+                    25,
+                    26
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "MonederoVulnerable",
+                    "source_mapping": {
+                      "start": 695,
+                      "length": 622,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "ejecutar(address,bytes)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "MonederoVulnerable.ejecutar(address,bytes).logica (src/C4-delegatecall-proxies/Vulnerable.sol#22) lacks a zero-check on :\n\t\t- (ok,None) = logica.delegatecall(data) (src/C4-delegatecall-proxies/Vulnerable.sol#24)\n",
+        "markdown": "[MonederoVulnerable.ejecutar(address,bytes).logica](src/C4-delegatecall-proxies/Vulnerable.sol#L22) lacks a zero-check on :\n\t\t- [(ok,None) = logica.delegatecall(data)](src/C4-delegatecall-proxies/Vulnerable.sol#L24)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L22",
+        "id": "d4f137e2e42de7ee3c2876593617548f792b0144165428004e79d49fd0c5f196",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "implementacion",
+            "source_mapping": {
+              "start": 4014,
+              "length": 136,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                109,
+                110,
+                111,
+                112,
+                113
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "LogicaUUPSVulnerable",
+                "source_mapping": {
+                  "start": 3406,
+                  "length": 746,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                    111,
+                    112,
+                    113,
+                    114
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "implementacion()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "",
+            "source_mapping": {
+              "start": 4087,
+              "length": 57,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                110,
+                111,
+                112
+              ],
+              "starting_column": 9,
+              "ending_column": 10
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "implementacion",
+                "source_mapping": {
+                  "start": 4014,
+                  "length": 136,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    109,
+                    110,
+                    111,
+                    112,
+                    113
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaUUPSVulnerable",
+                    "source_mapping": {
+                      "start": 3406,
+                      "length": 746,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        90,
+                        91,
+                        92,
+                        93,
+                        94,
+                        95,
+                        96,
+                        97,
+                        98,
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        104,
+                        105,
+                        106,
+                        107,
+                        108,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        114
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "implementacion()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "LogicaUUPSVulnerable.implementacion() (src/C4-delegatecall-proxies/Vulnerable.sol#109-113) uses assembly\n\t- INLINE ASM (src/C4-delegatecall-proxies/Vulnerable.sol#110-112)\n",
+        "markdown": "[LogicaUUPSVulnerable.implementacion()](src/C4-delegatecall-proxies/Vulnerable.sol#L109-L113) uses assembly\n\t- [INLINE ASM](src/C4-delegatecall-proxies/Vulnerable.sol#L110-L112)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L109-L113",
+        "id": "04229fc42f0d40746f7af2440b925724f10044612bb7b46f755ed1d83e06120d",
+        "check": "assembly",
+        "impact": "Informational",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "fallback",
+            "source_mapping": {
+              "start": 2063,
+              "length": 399,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "ProxyVulnerable",
+                "source_mapping": {
+                  "start": 1875,
+                  "length": 589,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "fallback()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "",
+            "source_mapping": {
+              "start": 2140,
+              "length": 316,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68
+              ],
+              "starting_column": 9,
+              "ending_column": 10
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "fallback",
+                "source_mapping": {
+                  "start": 2063,
+                  "length": 399,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "ProxyVulnerable",
+                    "source_mapping": {
+                      "start": 1875,
+                      "length": 589,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "fallback()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "ProxyVulnerable.fallback() (src/C4-delegatecall-proxies/Vulnerable.sol#59-69) uses assembly\n\t- INLINE ASM (src/C4-delegatecall-proxies/Vulnerable.sol#61-68)\n",
+        "markdown": "[ProxyVulnerable.fallback()](src/C4-delegatecall-proxies/Vulnerable.sol#L59-L69) uses assembly\n\t- [INLINE ASM](src/C4-delegatecall-proxies/Vulnerable.sol#L61-L68)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L59-L69",
+        "id": "97f13aa2e8b817b6ef97e5646ae382e7d132c5aeaa3d7bb058fd3a8042d74197",
+        "check": "assembly",
+        "impact": "Informational",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "upgradeTo",
+            "source_mapping": {
+              "start": 3840,
+              "length": 168,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                102,
+                103,
+                104,
+                105,
+                106,
+                107
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "LogicaUUPSVulnerable",
+                "source_mapping": {
+                  "start": 3406,
+                  "length": 746,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    90,
+                    91,
+                    92,
+                    93,
+                    94,
+                    95,
+                    96,
+                    97,
+                    98,
+                    99,
+                    100,
+                    101,
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107,
+                    108,
+                    109,
+                    110,
+                    111,
+                    112,
+                    113,
+                    114
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "upgradeTo(address)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "",
+            "source_mapping": {
+              "start": 3945,
+              "length": 57,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                104,
+                105,
+                106
+              ],
+              "starting_column": 9,
+              "ending_column": 10
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "upgradeTo",
+                "source_mapping": {
+                  "start": 3840,
+                  "length": 168,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    102,
+                    103,
+                    104,
+                    105,
+                    106,
+                    107
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaUUPSVulnerable",
+                    "source_mapping": {
+                      "start": 3406,
+                      "length": 746,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        90,
+                        91,
+                        92,
+                        93,
+                        94,
+                        95,
+                        96,
+                        97,
+                        98,
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        104,
+                        105,
+                        106,
+                        107,
+                        108,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        114
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "upgradeTo(address)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "LogicaUUPSVulnerable.upgradeTo(address) (src/C4-delegatecall-proxies/Vulnerable.sol#102-107) uses assembly\n\t- INLINE ASM (src/C4-delegatecall-proxies/Vulnerable.sol#104-106)\n",
+        "markdown": "[LogicaUUPSVulnerable.upgradeTo(address)](src/C4-delegatecall-proxies/Vulnerable.sol#L102-L107) uses assembly\n\t- [INLINE ASM](src/C4-delegatecall-proxies/Vulnerable.sol#L104-L106)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L102-L107",
+        "id": "b7c30747f3f3cbd6101dceefaeff78c80120a8767082d22d8d184a5d01b418ea",
+        "check": "assembly",
+        "impact": "Informational",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "ejecutar",
+            "source_mapping": {
+              "start": 829,
+              "length": 227,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                22,
+                23,
+                24,
+                25,
+                26
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "MonederoVulnerable",
+                "source_mapping": {
+                  "start": 695,
+                  "length": 622,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "ejecutar(address,bytes)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "(ok,None) = logica.delegatecall(data)",
+            "source_mapping": {
+              "start": 965,
+              "length": 39,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                24
+              ],
+              "starting_column": 9,
+              "ending_column": 48
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "ejecutar",
+                "source_mapping": {
+                  "start": 829,
+                  "length": 227,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    22,
+                    23,
+                    24,
+                    25,
+                    26
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "MonederoVulnerable",
+                    "source_mapping": {
+                      "start": 695,
+                      "length": 622,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "ejecutar(address,bytes)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Low level call in MonederoVulnerable.ejecutar(address,bytes) (src/C4-delegatecall-proxies/Vulnerable.sol#22-26):\n\t- (ok,None) = logica.delegatecall(data) (src/C4-delegatecall-proxies/Vulnerable.sol#24)\n",
+        "markdown": "Low level call in [MonederoVulnerable.ejecutar(address,bytes)](src/C4-delegatecall-proxies/Vulnerable.sol#L22-L26):\n\t- [(ok,None) = logica.delegatecall(data)](src/C4-delegatecall-proxies/Vulnerable.sol#L24)\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L22-L26",
+        "id": "d18e2362306d56150feb9a1f8e87ba97c30a009d89f10ce71aa70656061db2de",
+        "check": "low-level-calls",
+        "impact": "Informational",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_owner",
+            "source_mapping": {
+              "start": 3766,
+              "length": 14,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                98
+              ],
+              "starting_column": 25,
+              "ending_column": 39
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "initialize",
+                "source_mapping": {
+                  "start": 3746,
+                  "length": 88,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    98,
+                    99,
+                    100
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "LogicaUUPSVulnerable",
+                    "source_mapping": {
+                      "start": 3406,
+                      "length": 746,
+                      "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        90,
+                        91,
+                        92,
+                        93,
+                        94,
+                        95,
+                        96,
+                        97,
+                        98,
+                        99,
+                        100,
+                        101,
+                        102,
+                        103,
+                        104,
+                        105,
+                        106,
+                        107,
+                        108,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        114
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "initialize(address)"
+                }
+              }
+            },
+            "additional_fields": {
+              "target": "parameter",
+              "convention": "mixedCase"
+            }
+          }
+        ],
+        "description": "Parameter LogicaUUPSVulnerable.initialize(address)._owner (src/C4-delegatecall-proxies/Vulnerable.sol#98) is not in mixedCase\n",
+        "markdown": "Parameter [LogicaUUPSVulnerable.initialize(address)._owner](src/C4-delegatecall-proxies/Vulnerable.sol#L98) is not in mixedCase\n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L98",
+        "id": "091af0c01e93c1c1cb21ce2cbad082fd79b5485b084cb7238b8535f1b3e7c43c",
+        "check": "naming-convention",
+        "impact": "Informational",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "implementation",
+            "source_mapping": {
+              "start": 1906,
+              "length": 29,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                52
+              ],
+              "starting_column": 5,
+              "ending_column": 34
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "ProxyVulnerable",
+                "source_mapping": {
+                  "start": 1875,
+                  "length": 589,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "ProxyVulnerable.implementation (src/C4-delegatecall-proxies/Vulnerable.sol#52) should be immutable \n",
+        "markdown": "[ProxyVulnerable.implementation](src/C4-delegatecall-proxies/Vulnerable.sol#L52) should be immutable \n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L52",
+        "id": "4bb543ad6858882ddf464978f5a6246884eb5910a71cd93c1b2f7ffa70f5df1a",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "owner",
+            "source_mapping": {
+              "start": 729,
+              "length": 20,
+              "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+              "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                16
+              ],
+              "starting_column": 5,
+              "ending_column": 25
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "MonederoVulnerable",
+                "source_mapping": {
+                  "start": 695,
+                  "length": 622,
+                  "filename_relative": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "filename_short": "src/C4-delegatecall-proxies/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "MonederoVulnerable.owner (src/C4-delegatecall-proxies/Vulnerable.sol#16) should be immutable \n",
+        "markdown": "[MonederoVulnerable.owner](src/C4-delegatecall-proxies/Vulnerable.sol#L16) should be immutable \n",
+        "first_markdown_element": "src/C4-delegatecall-proxies/Vulnerable.sol#L16",
+        "id": "69c3e2eb8e3ea841203c44a1b108256c259c5e24ad85b62459c17764c4aeb247",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable"
+      }
+    ]
+  }
+}

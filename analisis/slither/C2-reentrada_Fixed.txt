@@ -1,0 +1,28 @@
+
+Detector: erc20-interface
+BancoTransferibleFixed (src/C2-reentrada/Fixed.sol#77-103) has incorrect ERC20 function interface:BancoTransferibleFixed.transfer(address,uint256) (src/C2-reentrada/Fixed.sol#84-88)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-erc20-interface
+
+Detector: incorrect-equality
+BancoFixed.isSolved() (src/C2-reentrada/Fixed.sol#30-32) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C2-reentrada/Fixed.sol#31)
+PoolFixed.deposit() (src/C2-reentrada/Fixed.sol#50-56) uses a dangerous strict equality:
+	- totalShares == 0 (src/C2-reentrada/Fixed.sol#51-53)
+PoolFixed.pricePerShare() (src/C2-reentrada/Fixed.sol#67-70) uses a dangerous strict equality:
+	- totalShares == 0 (src/C2-reentrada/Fixed.sol#68)
+BancoTransferibleFixed.isSolved() (src/C2-reentrada/Fixed.sol#100-102) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C2-reentrada/Fixed.sol#101)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: low-level-calls
+Low level call in BancoFixed.withdraw() (src/C2-reentrada/Fixed.sol#20-28):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C2-reentrada/Fixed.sol#26)
+Low level call in PoolFixed.withdraw(uint256) (src/C2-reentrada/Fixed.sol#58-65):
+	- (ok,None) = msg.sender.call{value: value}() (src/C2-reentrada/Fixed.sol#63)
+Low level call in BancoTransferibleFixed.withdraw() (src/C2-reentrada/Fixed.sol#90-98):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C2-reentrada/Fixed.sol#96)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+src/C2-reentrada/Fixed.sol analyzed (5 contracts with 102 detectors), 8 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C2-reentrada/Fixed.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C2-reentrada' running

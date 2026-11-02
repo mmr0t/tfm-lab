@@ -1,0 +1,24 @@
+
+Detector: encode-packed-collision
+PermisosVulnerable.esAdmin(address[],address[],uint8,bytes32,bytes32) (src/C10-validacion-entradas/Vulnerable.sol#52-61) calls abi.encodePacked() with multiple dynamic arguments:
+	- hash = keccak256(bytes)(abi.encodePacked(admins,users)) (src/C10-validacion-entradas/Vulnerable.sol#59)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#abi-encodePacked-collision
+
+Detector: missing-zero-check
+PermisosVulnerable.constructor(address)._f (src/C10-validacion-entradas/Vulnerable.sol#48) lacks a zero-check on :
+		- firmante = _f (src/C10-validacion-entradas/Vulnerable.sol#49)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+
+Detector: assembly
+BovedaVulnerable.editar(uint256,uint256) (src/C10-validacion-entradas/Vulnerable.sol#27-33) uses assembly
+	- INLINE ASM (src/C10-validacion-entradas/Vulnerable.sol#28-32)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+
+Detector: immutable-states
+BovedaVulnerable.owner (src/C10-validacion-entradas/Vulnerable.sol#13) should be immutable 
+PermisosVulnerable.firmante (src/C10-validacion-entradas/Vulnerable.sol#46) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C10-validacion-entradas/Vulnerable.sol analyzed (2 contracts with 102 detectors), 5 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C10-validacion-entradas/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C10-validacion-entradas' running

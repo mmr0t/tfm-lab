@@ -1,0 +1,58 @@
+
+Detector: reentrancy-eth
+Reentrancy in BancoVulnerable.withdraw() (src/C2-reentrada/Vulnerable.sol#18-27):
+	External calls:
+	- (ok,None) = msg.sender.call{value: amount}() (src/C2-reentrada/Vulnerable.sol#23)
+	State variables written after the call(s):
+	- balances[msg.sender] = 0 (src/C2-reentrada/Vulnerable.sol#26)
+	BancoVulnerable.balances (src/C2-reentrada/Vulnerable.sol#12) can be used in cross function reentrancies:
+	- BancoVulnerable.balances (src/C2-reentrada/Vulnerable.sol#12)
+	- BancoVulnerable.deposit() (src/C2-reentrada/Vulnerable.sol#14-16)
+	- BancoVulnerable.withdraw() (src/C2-reentrada/Vulnerable.sol#18-27)
+Reentrancy in PoolVulnerable.withdraw(uint256) (src/C2-reentrada/Vulnerable.sol#60-69):
+	External calls:
+	- (ok,None) = msg.sender.call{value: value}() (src/C2-reentrada/Vulnerable.sol#65)
+	State variables written after the call(s):
+	- totalShares -= amount (src/C2-reentrada/Vulnerable.sol#68)
+	PoolVulnerable.totalShares (src/C2-reentrada/Vulnerable.sol#42) can be used in cross function reentrancies:
+	- PoolVulnerable.deposit() (src/C2-reentrada/Vulnerable.sol#52-58)
+	- PoolVulnerable.pricePerShare() (src/C2-reentrada/Vulnerable.sol#72-75)
+	- PoolVulnerable.totalShares (src/C2-reentrada/Vulnerable.sol#42)
+Reentrancy in BancoTransferibleVulnerable.withdraw() (src/C2-reentrada/Vulnerable.sol#107-116):
+	External calls:
+	- (ok,None) = msg.sender.call{value: amount}() (src/C2-reentrada/Vulnerable.sol#112)
+	State variables written after the call(s):
+	- balances[msg.sender] = 0 (src/C2-reentrada/Vulnerable.sol#115)
+	BancoTransferibleVulnerable.balances (src/C2-reentrada/Vulnerable.sol#86) can be used in cross function reentrancies:
+	- BancoTransferibleVulnerable.balances (src/C2-reentrada/Vulnerable.sol#86)
+	- BancoTransferibleVulnerable.deposit() (src/C2-reentrada/Vulnerable.sol#96-98)
+	- BancoTransferibleVulnerable.transfer(address,uint256) (src/C2-reentrada/Vulnerable.sol#101-105)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1
+
+Detector: erc20-interface
+BancoTransferibleVulnerable (src/C2-reentrada/Vulnerable.sol#85-121) has incorrect ERC20 function interface:BancoTransferibleVulnerable.transfer(address,uint256) (src/C2-reentrada/Vulnerable.sol#101-105)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-erc20-interface
+
+Detector: incorrect-equality
+BancoVulnerable.isSolved() (src/C2-reentrada/Vulnerable.sol#30-32) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C2-reentrada/Vulnerable.sol#31)
+PoolVulnerable.deposit() (src/C2-reentrada/Vulnerable.sol#52-58) uses a dangerous strict equality:
+	- totalShares == 0 (src/C2-reentrada/Vulnerable.sol#53-55)
+PoolVulnerable.pricePerShare() (src/C2-reentrada/Vulnerable.sol#72-75) uses a dangerous strict equality:
+	- totalShares == 0 (src/C2-reentrada/Vulnerable.sol#73)
+BancoTransferibleVulnerable.isSolved() (src/C2-reentrada/Vulnerable.sol#118-120) uses a dangerous strict equality:
+	- address(this).balance == 0 (src/C2-reentrada/Vulnerable.sol#119)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities
+
+Detector: low-level-calls
+Low level call in BancoVulnerable.withdraw() (src/C2-reentrada/Vulnerable.sol#18-27):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C2-reentrada/Vulnerable.sol#23)
+Low level call in PoolVulnerable.withdraw(uint256) (src/C2-reentrada/Vulnerable.sol#60-69):
+	- (ok,None) = msg.sender.call{value: value}() (src/C2-reentrada/Vulnerable.sol#65)
+Low level call in BancoTransferibleVulnerable.withdraw() (src/C2-reentrada/Vulnerable.sol#107-116):
+	- (ok,None) = msg.sender.call{value: amount}() (src/C2-reentrada/Vulnerable.sol#112)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+src/C2-reentrada/Vulnerable.sol analyzed (3 contracts with 102 detectors), 11 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C2-reentrada/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C2-reentrada' running

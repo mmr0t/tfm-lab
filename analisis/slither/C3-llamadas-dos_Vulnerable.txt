@@ -1,0 +1,42 @@
+
+Detector: unchecked-send
+RecompensasVulnerable.reclamar() (src/C3-llamadas-dos/Vulnerable.sol#42-50) ignores return value by address(msg.sender).send(amount) (src/C3-llamadas-dos/Vulnerable.sol#49)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-send
+
+Detector: calls-loop
+RepartoVulnerable.repartir() (src/C3-llamadas-dos/Vulnerable.sol#77-86) has external calls inside a loop: address(participantes[i]).transfer(parte) (src/C3-llamadas-dos/Vulnerable.sol#83)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop
+
+Detector: reentrancy-unlimited-gas
+Reentrancy in SubastaVulnerable.pujar() (src/C3-llamadas-dos/Vulnerable.sol#17-28):
+	External calls:
+	- address(mejorPostor).transfer(mejorPuja) (src/C3-llamadas-dos/Vulnerable.sol#23)
+	State variables written after the call(s):
+	- mejorPostor = msg.sender (src/C3-llamadas-dos/Vulnerable.sol#26)
+	- mejorPuja = msg.value (src/C3-llamadas-dos/Vulnerable.sol#27)
+Reentrancy in RepartoVulnerable.repartir() (src/C3-llamadas-dos/Vulnerable.sol#77-86):
+	External calls:
+	- address(participantes[i]).transfer(parte) (src/C3-llamadas-dos/Vulnerable.sol#83)
+	State variables written after the call(s):
+	- repartido = true (src/C3-llamadas-dos/Vulnerable.sol#85)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-5
+
+Detector: cache-array-length
+Loop condition i < participantes.length (src/C3-llamadas-dos/Vulnerable.sol#82) should use cached array length instead of referencing `length` member of the storage array.
+ Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#cache-array-length
+
+Detector: immutable-states
+RepartoVulnerable.organizador (src/C3-llamadas-dos/Vulnerable.sol#60) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+src/C3-llamadas-dos/Vulnerable.sol analyzed (3 contracts with 102 detectors), 6 result(s) found
+Multiple frameworks detected: solc, Solc-json. Using solc (highest priority). Use --compile-force-framework to override.
+'solc --version' running
+'solc @openzeppelin/contracts/=lib/openzeppelin/ src/C3-llamadas-dos/Vulnerable.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --evm-version cancun --optimize --optimize-runs 200 --allow-paths .,/tmp/tmp.EXRCspoZal/src/C3-llamadas-dos' running
+Compilation warnings/errors on src/C3-llamadas-dos/Vulnerable.sol:
+Warning: Failure condition of 'send' ignored. Consider using 'transfer' instead.
+  --> src/C3-llamadas-dos/Vulnerable.sol:49:9:
+   |
+49 |         payable(msg.sender).send(amount);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+

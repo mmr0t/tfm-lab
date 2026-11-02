@@ -1,0 +1,38 @@
+# Configuracion del laboratorio del TFM.
+# Versiones fijadas para que los resultados sean reproducibles.
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+test = "test"
+
+# Compilador y EVM fijados para reproducibilidad.
+# Se usa "cancun" (el EVM de mainnet desde la actualización Dencun, 2024), que es
+# el que requieren algunas utilidades de OpenZeppelin 5.6 (opcode mcopy).
+# El optimizador (200 runs) y el compilador 0.8.x coinciden con Polonio.
+solc = "0.8.28"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 200
+
+# Salida de los tests
+verbosity = 3
+fs_permissions = [{ access = "read", path = "./" }]
+
+# Perfil de paridad con Polonio, cuyo compilador usa evmVersion "paris".
+# Sirve para comprobar que los contratos de los retos de Polonio (los
+# vulnerables, autocontenidos y sin OpenZeppelin) también compilan bajo paris.
+# Uso: FOUNDRY_PROFILE=paris forge build
+[profile.paris]
+evm_version = "paris"
+
+# Simulación de las fichas de Polonio de C7 y C8: despliega los contratos de
+# los retos, prepara su estado inicial y comprueba la condición de
+# éxito, con la misma EVM que Polonio.
+# Uso: FOUNDRY_PROFILE=polonio ./forge test
+[profile.polonio]
+src = "polonio/simulacion/src"
+test = "polonio/simulacion/test"
+out = "out-polonio"
+cache_path = "cache-polonio"
+evm_version = "paris"

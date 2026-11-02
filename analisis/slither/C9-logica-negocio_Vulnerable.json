@@ -1,0 +1,157 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "isSolved",
+            "source_mapping": {
+              "start": 1076,
+              "length": 99,
+              "filename_relative": "src/C9-logica-negocio/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C9-logica-negocio/Vulnerable.sol",
+              "filename_short": "src/C9-logica-negocio/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                28,
+                29,
+                30
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "StakingVulnerable",
+                "source_mapping": {
+                  "start": 462,
+                  "length": 715,
+                  "filename_relative": "src/C9-logica-negocio/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C9-logica-negocio/Vulnerable.sol",
+                  "filename_short": "src/C9-logica-negocio/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "isSolved()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(this).balance == 0",
+            "source_mapping": {
+              "start": 1135,
+              "length": 33,
+              "filename_relative": "src/C9-logica-negocio/Vulnerable.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C9-logica-negocio/Vulnerable.sol",
+              "filename_short": "src/C9-logica-negocio/Vulnerable.sol",
+              "is_dependency": false,
+              "lines": [
+                29
+              ],
+              "starting_column": 9,
+              "ending_column": 42
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "isSolved",
+                "source_mapping": {
+                  "start": 1076,
+                  "length": 99,
+                  "filename_relative": "src/C9-logica-negocio/Vulnerable.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C9-logica-negocio/Vulnerable.sol",
+                  "filename_short": "src/C9-logica-negocio/Vulnerable.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    28,
+                    29,
+                    30
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "StakingVulnerable",
+                    "source_mapping": {
+                      "start": 462,
+                      "length": 715,
+                      "filename_relative": "src/C9-logica-negocio/Vulnerable.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C9-logica-negocio/Vulnerable.sol",
+                      "filename_short": "src/C9-logica-negocio/Vulnerable.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "isSolved()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "StakingVulnerable.isSolved() (src/C9-logica-negocio/Vulnerable.sol#28-30) uses a dangerous strict equality:\n\t- address(this).balance == 0 (src/C9-logica-negocio/Vulnerable.sol#29)\n",
+        "markdown": "[StakingVulnerable.isSolved()](src/C9-logica-negocio/Vulnerable.sol#L28-L30) uses a dangerous strict equality:\n\t- [address(this).balance == 0](src/C9-logica-negocio/Vulnerable.sol#L29)\n",
+        "first_markdown_element": "src/C9-logica-negocio/Vulnerable.sol#L28-L30",
+        "id": "6bf77537e6a4a7dbe17a48d3bdd249ae2af95dbb0a01b3d0b746c57770cff088",
+        "check": "incorrect-equality",
+        "impact": "Medium",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities"
+      }
+    ]
+  }
+}

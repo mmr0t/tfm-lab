@@ -1,0 +1,1366 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "retirar",
+            "source_mapping": {
+              "start": 2050,
+              "length": 407,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "PagosMaleableFixed",
+                "source_mapping": {
+                  "start": 1840,
+                  "length": 724,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "retirar(address,uint256,bytes)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(to).transfer(amount)",
+            "source_mapping": {
+              "start": 2422,
+              "length": 28,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                65
+              ],
+              "starting_column": 9,
+              "ending_column": 37
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "retirar",
+                "source_mapping": {
+                  "start": 2050,
+                  "length": 407,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosMaleableFixed",
+                    "source_mapping": {
+                      "start": 1840,
+                      "length": 724,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "retirar(address,uint256,bytes)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosMaleableFixed.retirar(address,uint256,bytes) (src/C6-firmas/Fixed.sol#58-66) sends eth to arbitrary user\n\tDangerous calls:\n\t- address(to).transfer(amount) (src/C6-firmas/Fixed.sol#65)\n",
+        "markdown": "[PagosMaleableFixed.retirar(address,uint256,bytes)](src/C6-firmas/Fixed.sol#L58-L66) sends eth to arbitrary user\n\tDangerous calls:\n\t- [address(to).transfer(amount)](src/C6-firmas/Fixed.sol#L65)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L58-L66",
+        "id": "2a00e2d0b35554421a1784cfe6684ceedaa0aecd26da7a6a3a88d159c630e5d2",
+        "check": "arbitrary-send-eth",
+        "impact": "High",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "retirar",
+            "source_mapping": {
+              "start": 1210,
+              "length": 311,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "PagosSeguro",
+                "source_mapping": {
+                  "start": 620,
+                  "length": 1008,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "retirar(address,uint256,uint256,bytes)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(to).transfer(amount)",
+            "source_mapping": {
+              "start": 1486,
+              "length": 28,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                37
+              ],
+              "starting_column": 9,
+              "ending_column": 37
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "retirar",
+                "source_mapping": {
+                  "start": 1210,
+                  "length": 311,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosSeguro",
+                    "source_mapping": {
+                      "start": 620,
+                      "length": 1008,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "retirar(address,uint256,uint256,bytes)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosSeguro.retirar(address,uint256,uint256,bytes) (src/C6-firmas/Fixed.sol#32-38) sends eth to arbitrary user\n\tDangerous calls:\n\t- address(to).transfer(amount) (src/C6-firmas/Fixed.sol#37)\n",
+        "markdown": "[PagosSeguro.retirar(address,uint256,uint256,bytes)](src/C6-firmas/Fixed.sol#L32-L38) sends eth to arbitrary user\n\tDangerous calls:\n\t- [address(to).transfer(amount)](src/C6-firmas/Fixed.sol#L37)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L32-L38",
+        "id": "d5a22b16441fe9b4ec794be3744ea5138b179c269b0a89fe10ad1aa03867ae3f",
+        "check": "arbitrary-send-eth",
+        "impact": "High",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#functions-that-send-ether-to-arbitrary-destinations"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "isSolved",
+            "source_mapping": {
+              "start": 1527,
+              "length": 99,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                40,
+                41,
+                42
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "PagosSeguro",
+                "source_mapping": {
+                  "start": 620,
+                  "length": 1008,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "isSolved()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(this).balance == 0",
+            "source_mapping": {
+              "start": 1586,
+              "length": 33,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                41
+              ],
+              "starting_column": 9,
+              "ending_column": 42
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "isSolved",
+                "source_mapping": {
+                  "start": 1527,
+                  "length": 99,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    40,
+                    41,
+                    42
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosSeguro",
+                    "source_mapping": {
+                      "start": 620,
+                      "length": 1008,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "isSolved()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosSeguro.isSolved() (src/C6-firmas/Fixed.sol#40-42) uses a dangerous strict equality:\n\t- address(this).balance == 0 (src/C6-firmas/Fixed.sol#41)\n",
+        "markdown": "[PagosSeguro.isSolved()](src/C6-firmas/Fixed.sol#L40-L42) uses a dangerous strict equality:\n\t- [address(this).balance == 0](src/C6-firmas/Fixed.sol#L41)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L40-L42",
+        "id": "9d751dca876d22ba68e783dbcb656dfd0da843894d7af1def9d29bc59574b656",
+        "check": "incorrect-equality",
+        "impact": "Medium",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "isSolved",
+            "source_mapping": {
+              "start": 2463,
+              "length": 99,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                68,
+                69,
+                70
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "PagosMaleableFixed",
+                "source_mapping": {
+                  "start": 1840,
+                  "length": 724,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "isSolved()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(this).balance == 0",
+            "source_mapping": {
+              "start": 2522,
+              "length": 33,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                69
+              ],
+              "starting_column": 9,
+              "ending_column": 42
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "isSolved",
+                "source_mapping": {
+                  "start": 2463,
+                  "length": 99,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    68,
+                    69,
+                    70
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosMaleableFixed",
+                    "source_mapping": {
+                      "start": 1840,
+                      "length": 724,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "isSolved()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosMaleableFixed.isSolved() (src/C6-firmas/Fixed.sol#68-70) uses a dangerous strict equality:\n\t- address(this).balance == 0 (src/C6-firmas/Fixed.sol#69)\n",
+        "markdown": "[PagosMaleableFixed.isSolved()](src/C6-firmas/Fixed.sol#L68-L70) uses a dangerous strict equality:\n\t- [address(this).balance == 0](src/C6-firmas/Fixed.sol#L69)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L68-L70",
+        "id": "dd46c9d76a23fe17037af40d0652ab984ee3489f96e91a405e44eba105ed99a1",
+        "check": "incorrect-equality",
+        "impact": "Medium",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#dangerous-strict-equalities"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "to",
+            "source_mapping": {
+              "start": 2067,
+              "length": 10,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                58
+              ],
+              "starting_column": 22,
+              "ending_column": 32
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "retirar",
+                "source_mapping": {
+                  "start": 2050,
+                  "length": 407,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosMaleableFixed",
+                    "source_mapping": {
+                      "start": 1840,
+                      "length": 724,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "retirar(address,uint256,bytes)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "address(to).transfer(amount)",
+            "source_mapping": {
+              "start": 2422,
+              "length": 28,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                65
+              ],
+              "starting_column": 9,
+              "ending_column": 37
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "retirar",
+                "source_mapping": {
+                  "start": 2050,
+                  "length": 407,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosMaleableFixed",
+                    "source_mapping": {
+                      "start": 1840,
+                      "length": 724,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "retirar(address,uint256,bytes)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosMaleableFixed.retirar(address,uint256,bytes).to (src/C6-firmas/Fixed.sol#58) lacks a zero-check on :\n\t\t- address(to).transfer(amount) (src/C6-firmas/Fixed.sol#65)\n",
+        "markdown": "[PagosMaleableFixed.retirar(address,uint256,bytes).to](src/C6-firmas/Fixed.sol#L58) lacks a zero-check on :\n\t\t- [address(to).transfer(amount)](src/C6-firmas/Fixed.sol#L65)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L58",
+        "id": "8c05dba90f1b697633d3888730903aa2aade755775078fb2db92ac7927ebf479",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_f",
+            "source_mapping": {
+              "start": 884,
+              "length": 10,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                23
+              ],
+              "starting_column": 17,
+              "ending_column": 27
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 872,
+                  "length": 89,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    23,
+                    24,
+                    25
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosSeguro",
+                    "source_mapping": {
+                      "start": 620,
+                      "length": 1008,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(address)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "firmante = _f",
+            "source_mapping": {
+              "start": 941,
+              "length": 13,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                24
+              ],
+              "starting_column": 9,
+              "ending_column": 22
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 872,
+                  "length": 89,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    23,
+                    24,
+                    25
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosSeguro",
+                    "source_mapping": {
+                      "start": 620,
+                      "length": 1008,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(address)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosSeguro.constructor(address)._f (src/C6-firmas/Fixed.sol#23) lacks a zero-check on :\n\t\t- firmante = _f (src/C6-firmas/Fixed.sol#24)\n",
+        "markdown": "[PagosSeguro.constructor(address)._f](src/C6-firmas/Fixed.sol#L23) lacks a zero-check on :\n\t\t- [firmante = _f](src/C6-firmas/Fixed.sol#L24)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L23",
+        "id": "b7623ebac2fcc2ee6ff328c2ffd23ed85813273f4171b826f58042f58700a812",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_f",
+            "source_mapping": {
+              "start": 1994,
+              "length": 10,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                54
+              ],
+              "starting_column": 17,
+              "ending_column": 27
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 1982,
+                  "length": 62,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    54,
+                    55,
+                    56
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosMaleableFixed",
+                    "source_mapping": {
+                      "start": 1840,
+                      "length": 724,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(address)"
+                }
+              }
+            }
+          },
+          {
+            "type": "node",
+            "name": "firmante = _f",
+            "source_mapping": {
+              "start": 2024,
+              "length": 13,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                55
+              ],
+              "starting_column": 9,
+              "ending_column": 22
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 1982,
+                  "length": 62,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    54,
+                    55,
+                    56
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "PagosMaleableFixed",
+                    "source_mapping": {
+                      "start": 1840,
+                      "length": 724,
+                      "filename_relative": "src/C6-firmas/Fixed.sol",
+                      "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                      "filename_short": "src/C6-firmas/Fixed.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(address)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosMaleableFixed.constructor(address)._f (src/C6-firmas/Fixed.sol#54) lacks a zero-check on :\n\t\t- firmante = _f (src/C6-firmas/Fixed.sol#55)\n",
+        "markdown": "[PagosMaleableFixed.constructor(address)._f](src/C6-firmas/Fixed.sol#L54) lacks a zero-check on :\n\t\t- [firmante = _f](src/C6-firmas/Fixed.sol#L55)\n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L54",
+        "id": "d18863a8e4c3abed6402391935f2e8df404224cf9063e0c767450c626b5317bb",
+        "check": "missing-zero-check",
+        "impact": "Low",
+        "confidence": "Medium",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "firmante",
+            "source_mapping": {
+              "start": 1904,
+              "length": 23,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                51
+              ],
+              "starting_column": 5,
+              "ending_column": 28
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "PagosMaleableFixed",
+                "source_mapping": {
+                  "start": 1840,
+                  "length": 724,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosMaleableFixed.firmante (src/C6-firmas/Fixed.sol#51) should be immutable \n",
+        "markdown": "[PagosMaleableFixed.firmante](src/C6-firmas/Fixed.sol#L51) should be immutable \n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L51",
+        "id": "6ce67410876ac927622c06c7359a23e3ceb69f23cb0654cff9bb708a9c2313a7",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "firmante",
+            "source_mapping": {
+              "start": 687,
+              "length": 23,
+              "filename_relative": "src/C6-firmas/Fixed.sol",
+              "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+              "filename_short": "src/C6-firmas/Fixed.sol",
+              "is_dependency": false,
+              "lines": [
+                17
+              ],
+              "starting_column": 5,
+              "ending_column": 28
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "PagosSeguro",
+                "source_mapping": {
+                  "start": 620,
+                  "length": 1008,
+                  "filename_relative": "src/C6-firmas/Fixed.sol",
+                  "filename_absolute": "/tmp/tmp.EXRCspoZal/src/C6-firmas/Fixed.sol",
+                  "filename_short": "src/C6-firmas/Fixed.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "PagosSeguro.firmante (src/C6-firmas/Fixed.sol#17) should be immutable \n",
+        "markdown": "[PagosSeguro.firmante](src/C6-firmas/Fixed.sol#L17) should be immutable \n",
+        "first_markdown_element": "src/C6-firmas/Fixed.sol#L17",
+        "id": "d2bad33076f031ce444b03b60498f3989c3483127bc05bd000ecd05e943ae58b",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High",
+        "reference": "https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable"
+      }
+    ]
+  }
+}
